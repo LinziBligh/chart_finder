@@ -1,6 +1,2 @@
-require "chart_finder/version"
-
-module ChartFinder
-  class Error < StandardError; end
-  # Your code goes here...
-end
+require_relative "chart_finder/version"
+require_relative './chart_finder/cli'
