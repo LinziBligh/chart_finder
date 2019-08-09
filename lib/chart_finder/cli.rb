@@ -5,6 +5,7 @@ class ChartFinder::CLI
     @date = gets.strip
     lists_songs
     menu
+    goodbye
     
   end
   
@@ -28,6 +29,10 @@ class ChartFinder::CLI
         puts "More info about song 2" 
       end
     end
+  end
+  
+  def goodbye
+    puts "Thanks for using Chart Finder! Goodbye!"
   end
  
  
