@@ -18,7 +18,18 @@ class ChartFinder::CLI
  end
  
  def menu
-   puts "Enter the number of the song that you would like more information about"
- end
+   puts "Enter the number of the song that you would like more information about, or type exit"
+   while input != "exit"
+   input = gets.strip.downcase
+      case input
+        when "1"
+        puts "More info about song 1"
+        when "2"
+        puts "More info about song 2" 
+      end
+    end
+  end
+ 
+ 
 
 end
