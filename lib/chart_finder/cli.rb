@@ -31,6 +31,8 @@ class ChartFinder::CLI
         puts "More info about song 1"
         when "2"
         puts "More info about song 2" 
+        else
+        puts "Invalid choice"
       end
     end
   end
