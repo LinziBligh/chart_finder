@@ -11,11 +11,8 @@ class ChartFinder::CLI
   
   
   def list_songs
-    puts "Here is the offial UK chart for #{@date}"
-    puts <<-DOC #look up "here doc" ...
-    1. first song - artist - date
-    2. second song - artist - date
- DOC
+    
+ @songs = ChartFinder::Song.date
  end
  
  def menu
