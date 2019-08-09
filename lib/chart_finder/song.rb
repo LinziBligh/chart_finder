@@ -1,7 +1,7 @@
 class ChartFinder:: Song 
 
-def self.date
-  puts "Here is the offial UK chart for #{@date}"
+def self.chart
+ 
     puts <<-DOC #look up "here doc" ...
     1. first song - artist - date
     2. second song - artist - date
@@ -9,4 +9,4 @@ def self.date
   #should return all of the instances of songs in the chart from this day.
 end
 
-end
+end 

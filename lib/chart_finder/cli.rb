@@ -6,14 +6,13 @@ class ChartFinder::CLI
     list_songs
     menu
     goodbye
-    
   end
   
   
   def list_songs
-    
- @songs = ChartFinder::Song.date
- end
+     puts "Here is the offial UK chart for #{@date}"
+    @chart = ChartFinder::Song.chart
+  end
  
  def menu
   
