@@ -10,8 +10,8 @@ class ChartFinder::CLI
   
   
   def list_songs
-     puts "Here is the offial UK chart for #{@date}"
-    @chart = Song.chart
+     puts "Here is the official UK chart for #{@date}"
+    @chart = ChartFinder::Song.chart
   end
  
  def menu
