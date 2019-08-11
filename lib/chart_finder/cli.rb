@@ -13,7 +13,7 @@ class ChartFinder::CLI
      puts "Here is the official UK chart for #{@date}"
     @chart = ChartFinder::Song.chart
     @chart.each.with_index(1) do |song, index|
-      puts "#{index}. #{song}"
+      puts "#{index}. #{song.title} - #{song.artist}"
     end
   end
  
