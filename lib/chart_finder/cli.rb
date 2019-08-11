@@ -24,8 +24,8 @@ class ChartFinder::CLI
     puts "Enter the number of the song that you would like more information about, type chart to see the chart again or type exit to end"
    input = gets.strip.downcase
    
-   if input.to_i > 0
-    @chart[input.to_i - 1]
+   if input.to_i > 0 && input.to_i <= @chart.length
+    puts @chart[input.to_i-1]
     elsif input == "chart"
       list_songs
     else
