@@ -12,6 +12,9 @@ class ChartFinder::CLI
   def list_songs
      puts "Here is the official UK chart for #{@date}"
     @chart = ChartFinder::Song.chart
+    @chart.each.with_index(1) do |song, index|
+      puts "#{index}. #{song}"
+    end
   end
  
  def menu
@@ -22,7 +25,7 @@ class ChartFinder::CLI
    input = gets.strip.downcase
    
    if input.to_i > 0
-     puts @chart[input_to_i-1]
+    @chart[input.to_i - 1]
     elsif input == "chart"
       list_songs
     else

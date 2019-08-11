@@ -21,7 +21,7 @@ song_1.label = "Parlaphone"
  song_2.coverlink = "www.coverlink.com"
  @@all << song_2
  
-  puts "#{@@all}"
+ @@all
 
 
   #should return all of the instances of songs in the chart from this day.
