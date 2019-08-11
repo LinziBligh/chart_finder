@@ -17,6 +17,7 @@ class ChartFinder::CLI
     end
   end
  
+ 
  def menu
   
    input = nil
@@ -25,10 +26,11 @@ class ChartFinder::CLI
    input = gets.strip.downcase
    
    if input.to_i > 0 && input.to_i <= @chart.length
-    puts "Title: #{@chart[input.to_i-1].title}"
-    puts "Artist: #{@chart[input.to_i-1].artist}"
-    puts "Record Label: #{@chart[input.to_i-1].label}"
-    puts "Link to Cover Artwork: #{@chart[input.to_i-1].coverlink}"
+     chosen_song = @chart[input.to_i-1]
+    puts "Title: #{chosen_song.title}"
+    puts "Artist: #{chosen_song.artist}"
+    puts "Record Label: #{chosen_song.label}"
+    puts "Link to Cover Artwork: #{chosen_song.coverlink}"
     elsif input == "chart"
       list_songs
     else
