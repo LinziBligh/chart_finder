@@ -31,8 +31,15 @@ end
 def self.scrape
   html = open("https://www.officialcharts.com/charts/singles-chart/19840108/")
   doc = Nokogiri::HTML(html)
-  title = doc.css("div .track").text.strip
-  binding.pry
+  songs = doc.css("table.chart-positions div.track")
+  songs.each do |song|
+    title = song.css(".title a").text
+    artist = song.css(".artist a").text
+    label = song.css(".label").text
+    coverlink = song.css(".cover").children.attribute("src").value #not correct
+ binding.pry
+end
+
   # should return an array of all of the songs with details
 end
 
