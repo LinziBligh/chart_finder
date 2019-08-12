@@ -1,4 +1,4 @@
-
+require "pry"
 class ChartFinder::Song 
   attr_accessor :title, :artist, :label, :coverlink
   
@@ -26,5 +26,7 @@ song_1.label = "Parlaphone"
 
   #should return all of the instances of songs in the chart from this day.
 end
+
+
 
 end 
