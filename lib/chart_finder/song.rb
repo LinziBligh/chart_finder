@@ -1,4 +1,5 @@
 require "pry"
+require "open-uri"
 class ChartFinder::Song 
   attr_accessor :title, :artist, :label, :coverlink
   
@@ -6,6 +7,8 @@ class ChartFinder::Song
   @@all = []
   
 def self.chart
+  
+  self.scrape
   
 song_1 = self.new
 song_1.title = "Pipes of Peace"
@@ -23,8 +26,14 @@ song_1.label = "Parlaphone"
  
  @@all
 
+end
 
-  #should return all of the instances of songs in the chart from this day.
+def self.scrape
+  html = open("https://www.officialcharts.com/charts/singles-chart/19840108/")
+  doc = Nokogiri::HTML(html)
+  title = doc.css("div .track").text.strip
+  binding.pry
+  # should return an array of all of the songs with details
 end
 
 
