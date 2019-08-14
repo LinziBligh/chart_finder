@@ -1,6 +1,6 @@
 require "pry"
 require "open-uri"
-class ChartFinder::Song 
+class Song 
   attr_accessor :title, :artist, :label, :coverlink
   
   

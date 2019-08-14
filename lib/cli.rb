@@ -1,34 +1,37 @@
 require 'pry'
-class ChartFinder::CLI
+require_relative "../lib/scraper.rb"
+require_relative "../lib/song.rb"
+
+class CLI
   
   BASE_PATH = "https://www.officialcharts.com/charts/singles-chart/"
   
   def run 
     puts "What is the date of the chart that you would like to look up?"
     date = gets.strip
+    @chosen_date = date
     date_to_url(date)
-    make_songs
+    make_songs(@url)
+    binding.pry
     list_songs
     menu
     goodbye
   end
   
   def date_to_url(date)
-  url = BASE_PATH + date.split('/').reverse.join("")
+  @url = BASE_PATH + date.split('/').reverse.join("")
   end
   
     
-  end
   
-   def make_songs
-    @chart = ChartFinder::Song.chart
-    Scraper.scrape_index_page(BASE_PATH + 'index.html')
-    Student.create_from_collection(students_array)
+   def make_songs(url)
+    ChartFinder::Scraper.scrape(url)
+   # ChartFinder::Songs.create_from_collection(students_array)
   end
   
   
   def list_songs
-     puts "Here is the official UK chart for #{@date}"
+     puts "Here is the official UK chart for #{@chosen_date}"
     @chart = ChartFinder::Song.chart
     @chart.each.with_index(1) do |song, index|
       puts "#{index}. #{song.title} - #{song.artist}"
