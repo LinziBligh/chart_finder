@@ -5,11 +5,19 @@ class ChartFinder::CLI
   
   def run 
     puts "What is the date of the chart that you would like to look up?"
-    @date = gets.strip
+    date = gets.strip
+    date_to_url(date)
     make_songs
     list_songs
     menu
     goodbye
+  end
+  
+  def date_to_url(date)
+  url = BASE_PATH + date.split('/').reverse.join("")
+  end
+  
+    
   end
   
    def make_songs
