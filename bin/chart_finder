@@ -2,4 +2,4 @@
 
 require './lib/chart_finder'
 
-ChartFinder::CLI.new.call
+ChartFinder::CLI.new.run

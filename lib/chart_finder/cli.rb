@@ -1,12 +1,21 @@
 require 'pry'
 class ChartFinder::CLI
   
-  def call 
+  BASE_PATH = "https://www.officialcharts.com/charts/singles-chart/"
+  
+  def run 
     puts "What is the date of the chart that you would like to look up?"
     @date = gets.strip
+    make_songs
     list_songs
     menu
     goodbye
+  end
+  
+   def make_songs
+    @chart = ChartFinder::Song.chart
+    Scraper.scrape_index_page(BASE_PATH + 'index.html')
+    Student.create_from_collection(students_array)
   end
   
   
