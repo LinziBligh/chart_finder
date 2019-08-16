@@ -7,7 +7,7 @@ class ChartFinder::CLI
     date = gets.strip
     @chosen_date = date
     date_to_url(date)
-    make_songs(@url)
+    #make_songs(@url)
     list_songs
     menu
     goodbye
