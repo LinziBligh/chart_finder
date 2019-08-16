@@ -1,6 +1,3 @@
-require 'pry'
-require_relative "../lib/song.rb"
-
 class ChartFinder::CLI
   
   BASE_PATH = "https://www.officialcharts.com/charts/singles-chart/"
@@ -11,7 +8,6 @@ class ChartFinder::CLI
     @chosen_date = date
     date_to_url(date)
     make_songs(@url)
-    binding.pry
     list_songs
     menu
     goodbye
