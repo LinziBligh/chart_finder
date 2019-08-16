@@ -28,9 +28,10 @@ class ChartFinder::CLI
   def list_songs
      puts "Here is the official UK chart for #{@chosen_date}"
     @chart = ChartFinder::Song.chart
-    @chart.each.with_index(1) do |song, index|
-      puts "#{index}. #{song.title} - #{song.artist}"
-    end
+    puts @chart
+    #@chart.each.with_index(1) do |song, index|
+      #puts "#{index}. #{song.title} - #{song.artist}"
+    #end
   end
  
  
