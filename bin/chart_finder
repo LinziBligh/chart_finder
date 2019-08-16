@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
-require './lib/chart_finder'
+require "bundler/setup"
+require "chart_finder"
 
-CLI.new.run
+ChartFinder::CLI.new.call
 

@@ -2,11 +2,11 @@ require 'pry'
 require_relative "../lib/scraper.rb"
 require_relative "../lib/song.rb"
 
-class CLI
+class ChartFinder::CLI
   
   BASE_PATH = "https://www.officialcharts.com/charts/singles-chart/"
   
-  def run 
+  def call
     puts "What is the date of the chart that you would like to look up?"
     date = gets.strip
     @chosen_date = date
@@ -24,10 +24,10 @@ class CLI
   
     
   
-   def make_songs(url)
-    ChartFinder::Scraper.scrape(url)
+  # def make_songs(url)
+  #  ChartFinder::Scraper.scrape(url)
    # ChartFinder::Songs.create_from_collection(students_array)
-  end
+ # end
   
   
   def list_songs
