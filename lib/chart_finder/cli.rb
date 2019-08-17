@@ -4,7 +4,7 @@ class ChartFinder::CLI
   
   def call
     welcome
-    puts "What is the date of the chart that you would like to look up?"
+    puts "Please enter the date of the official UK singles chart that you would like to see, (DD/MM/YYYY). (Earliest available date is 14/11/1952)"
     date = gets.strip
     @chosen_date = date
     date_to_url(date)
@@ -30,7 +30,10 @@ class ChartFinder::CLI
   
     
   def list_songs
+     puts ""
      puts "Here is the official UK chart for #{@chosen_date}"
+     puts ""
+     puts "****************************************************************"
     @chart = ChartFinder::Song.scrape(@url)
     @chart.each.with_index(1) do |song, index|
       puts "#{index}. #{song[:title]} - #{song[:artist]}"
