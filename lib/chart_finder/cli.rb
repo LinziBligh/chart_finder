@@ -38,10 +38,10 @@ class ChartFinder::CLI
    
    if input.to_i > 0 && input.to_i <= @chart.length
      chosen_song = @chart[input.to_i-1]
-    puts "Title: #{chosen_song.title}"
-    puts "Artist: #{chosen_song.artist}"
-    puts "Record Label: #{chosen_song.label}"
-    puts "Link to Cover Artwork: #{chosen_song.coverlink}"
+    puts "Title: #{chosen_song[:title]}"
+    puts "Artist: #{chosen_song[:artist]}"
+    puts "Record Label: #{chosen_song[:label]}"
+    #puts "Link to Cover Artwork: #{chosen_song[:coverlink]}"
     elsif input == "chart"
       list_songs
     else
