@@ -13,16 +13,14 @@ class ChartFinder::CLI
   end
   
   def date_to_url(date)
-  @url = BASE_PATH + date.split('/').reverse.join("")
+    adjusted_date = date.split('/').reverse.join("")
+    @url = BASE_PATH + adjusted_date
   end
   
     
-
-  
-  
   def list_songs
      puts "Here is the official UK chart for #{@chosen_date}"
-    @chart = ChartFinder::Song.chart
+    @chart = ChartFinder::Song.scrape(@url)
     @chart.each.with_index(1) do |song, index|
       puts "#{index}. #{song[:title]} - #{song[:artist]}"
     end
