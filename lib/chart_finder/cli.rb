@@ -3,6 +3,7 @@ class ChartFinder::CLI
   BASE_PATH = "https://www.officialcharts.com/charts/singles-chart/"
   
   def call
+    welcome
     puts "What is the date of the chart that you would like to look up?"
     date = gets.strip
     @chosen_date = date
@@ -10,6 +11,16 @@ class ChartFinder::CLI
     list_songs
     menu
     goodbye
+  end
+  
+  def welcome
+    puts ""
+    puts "*************************************************"
+    puts "*                                               *"
+    puts "*          Welcome to ChartFinder!              *"
+    puts "*                                               *"
+    puts "*************************************************"
+    puts ""
   end
   
   def date_to_url(date)
