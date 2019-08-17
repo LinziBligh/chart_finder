@@ -24,6 +24,9 @@ class ChartFinder::CLI
   
   BASE_PATH = "https://www.officialcharts.com/charts/singles-chart/"
   
+  ###################################################
+  #following methods for possible soundtrack to life feature
+  
   # def dates_until_now(date)
   #   years_array = []
   #   year = date.split('/')[2].to_i
