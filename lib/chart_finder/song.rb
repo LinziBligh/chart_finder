@@ -4,7 +4,7 @@ class ChartFinder::Song
   
   @@all = []
   
-def self.scrape(url = "https://www.officialcharts.com/charts/singles-chart/20010812")
+def self.scrape(url)
   html = open(url)
   doc = Nokogiri::HTML(html)
   songs = doc.css("table.chart-positions div.track")
