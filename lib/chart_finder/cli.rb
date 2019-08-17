@@ -1,3 +1,4 @@
+require "pry"
 class ChartFinder::CLI
   def call
     welcome
@@ -5,6 +6,7 @@ class ChartFinder::CLI
     date = gets.strip
     @chosen_date = date
     date_to_url(date)
+    #dates_to_urls(date)
     list_songs
     menu
     goodbye
@@ -21,6 +23,23 @@ class ChartFinder::CLI
   end
   
   BASE_PATH = "https://www.officialcharts.com/charts/singles-chart/"
+  
+  # def dates_until_now(date)
+  #   years_array = []
+  #   year = date.split('/')[2].to_i
+  #   @day_month = "#{date.split('/')[0]}/#{date.split('/')[1]}"
+  #   until year == Date.today.year
+  #   years_array << year
+  #   year += 1
+  # end
+  # years_array
+  # end
+  
+  # def dates_to_urls(date)
+  # dates_until_now(date).map do |year| 
+  # date_to_url("#{@day_month}/#{year.to_s}")
+  # end
+  # end
   
   def date_to_url(date)
     adjusted_date = date.split('/').reverse.join("")
