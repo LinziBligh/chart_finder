@@ -7,7 +7,6 @@ class ChartFinder::CLI
     date = gets.strip
     @chosen_date = date
     date_to_url(date)
-    #make_songs(@url)
     list_songs
     menu
     goodbye
@@ -18,20 +17,15 @@ class ChartFinder::CLI
   end
   
     
-  
-  # def make_songs(url)
-  #  ChartFinder::Scraper.scrape(url)
-   # ChartFinder::Songs.create_from_collection(students_array)
- # end
+
   
   
   def list_songs
      puts "Here is the official UK chart for #{@chosen_date}"
     @chart = ChartFinder::Song.chart
-    puts @chart
-    #@chart.each.with_index(1) do |song, index|
-      #puts "#{index}. #{song.title} - #{song.artist}"
-    #end
+    @chart.each.with_index(1) do |song, index|
+      puts "#{index}. #{song[:title]} - #{song[:artist]}"
+    end
   end
  
  
