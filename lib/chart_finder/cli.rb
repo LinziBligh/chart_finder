@@ -49,8 +49,11 @@ class ChartFinder::CLI
     puts "Please enter the number of the song that you would like more information about, type chart to see the chart again or type exit to end"
    input = gets.strip.downcase
    
-   if input.to_i > 0 && input.to_i <= @chart.length
-     chosen_song = @chart[input.to_i-1]
+   if input.to_i <= 0 || input.to_i > @chart.length
+     puts "Invalid choice, please choose a song number between 1 and #{@chart.length}"
+     puts ""
+   elsif input.to_i > 0 && input.to_i <= @chart.length
+    chosen_song = @chart[input.to_i-1]
      puts ""
      puts "****************************************************************"
     puts "Title: #{chosen_song[:title]}"
@@ -62,7 +65,6 @@ class ChartFinder::CLI
     elsif input == "chart"
       list_songs
     else
-      puts "Invalid choice"
        end
     end
   end
