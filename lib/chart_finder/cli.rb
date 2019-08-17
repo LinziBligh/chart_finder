@@ -38,6 +38,7 @@ class ChartFinder::CLI
     @chart.each.with_index(1) do |song, index|
       puts "#{index}. #{song[:title]} - #{song[:artist]}"
     end
+    puts "****************************************************************"
   end
  
  
@@ -45,15 +46,19 @@ class ChartFinder::CLI
   
    input = nil
    while input != "exit"
-    puts "Enter the number of the song that you would like more information about, type chart to see the chart again or type exit to end"
+    puts "Please enter the number of the song that you would like more information about, type chart to see the chart again or type exit to end"
    input = gets.strip.downcase
    
    if input.to_i > 0 && input.to_i <= @chart.length
      chosen_song = @chart[input.to_i-1]
+     puts ""
+     puts "****************************************************************"
     puts "Title: #{chosen_song[:title]}"
     puts "Artist: #{chosen_song[:artist]}"
     puts "Record Label: #{chosen_song[:label]}"
-    puts "Link to Cover Artwork: #{chosen_song[:coverlink]}"
+    puts "Artwork Link: #{chosen_song[:coverlink]}"
+    puts "****************************************************************"
+    puts ""
     elsif input == "chart"
       list_songs
     else
