@@ -39,7 +39,7 @@ class ChartFinder::CLI
     puts "Title: #{chosen_song[:title]}"
     puts "Artist: #{chosen_song[:artist]}"
     puts "Record Label: #{chosen_song[:label]}"
-    #puts "Link to Cover Artwork: #{chosen_song[:coverlink]}"
+    puts "Link to Cover Artwork: #{chosen_song[:coverlink]}"
     elsif input == "chart"
       list_songs
     else
