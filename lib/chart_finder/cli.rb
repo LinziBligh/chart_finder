@@ -5,7 +5,6 @@ class ChartFinder::CLI
     date = gets.strip
     @chosen_date = date
     date_to_url(date)
-    #dates_to_urls(date)
     make_songs
     list_songs
     menu
@@ -24,25 +23,6 @@ class ChartFinder::CLI
   
   BASE_PATH = "https://www.officialcharts.com/charts/singles-chart/"
   
-  ###################################################
-  #following methods for possible soundtrack to life feature
-  
-  # def dates_until_now(date)
-  #   years_array = []
-  #   year = date.split('/')[2].to_i
-  #   @day_month = "#{date.split('/')[0]}/#{date.split('/')[1]}"
-  #   until year == Date.today.year
-  #   years_array << year
-  #   year += 1
-  # end
-  # years_array
-  # end
-  
-  # def dates_to_urls(date)
-  # dates_until_now(date).map do |year| 
-  # date_to_url("#{@day_month}/#{year.to_s}")
-  # end
-  # end
   
   def date_to_url(date)
     adjusted_date = date.split('/').reverse.join("")
@@ -60,8 +40,11 @@ class ChartFinder::CLI
     puts "Here is the official UK chart for #{@chosen_date}"
     puts ""
     puts "****************************************************************"
-    puts ChartFinder::Song.all
+    
+    ChartFinder::Song.all.each.with_index do |song, index|
+      puts "#{index + 1}. #{song.title} - #{song.artist} "
   end
+end
   
   # def display_students
   #   Student.all.each do |student|

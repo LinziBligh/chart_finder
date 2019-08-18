@@ -1,3 +1,4 @@
+ require 'pry'
  class ChartFinder::Scraper
 
 attr_accessor :title, :artist, :label, :coverlink 
