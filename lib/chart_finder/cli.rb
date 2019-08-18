@@ -6,6 +6,7 @@ class ChartFinder::CLI
     @chosen_date = date
     date_to_url(date)
     #dates_to_urls(date)
+    make_songs
     list_songs
     menu
     goodbye
@@ -48,18 +49,33 @@ class ChartFinder::CLI
     @url = BASE_PATH + adjusted_date
   end
   
+   def make_songs
+    song_array = ChartFinder::Scraper.scrape(@url)
+    ChartFinder::Song.create_from_collection(song_array)
+  end
+  
     
   def list_songs
     puts ""
     puts "Here is the official UK chart for #{@chosen_date}"
     puts ""
     puts "****************************************************************"
-    @chart = ChartFinder::Scraper.scrape(@url)
-       @chart.each.with_index(1) do |song, index|
-      puts "#{index}. #{song[:title]} - #{song[:artist]}"
-      end
-    puts "****************************************************************"
+    puts ChartFinder::Song.all
   end
+  
+  # def display_students
+  #   Student.all.each do |student|
+  #     puts "#{student.name.upcase}".colorize(:blue)
+  #     puts "  location:".colorize(:light_blue) + " #{student.location}"
+  #     puts "  profile quote:".colorize(:light_blue) + " #{student.profile_quote}"
+  #     puts "  bio:".colorize(:light_blue) + " #{student.bio}"
+  #     puts "  twitter:".colorize(:light_blue) + " #{student.twitter}"
+  #     puts "  linkedin:".colorize(:light_blue) + " #{student.linkedin}"
+  #     puts "  github:".colorize(:light_blue) + " #{student.github}"
+  #     puts "  blog:".colorize(:light_blue) + " #{student.blog}"
+  #     puts "----------------------".colorize(:green)
+  #   end
+  # end
  
  
   def menu
