@@ -54,7 +54,7 @@ class ChartFinder::CLI
     puts "Here is the official UK chart for #{@chosen_date}"
     puts ""
     puts "****************************************************************"
-    @chart = ChartFinder::Song.scrape(@url)
+    @chart = ChartFinder::Scraper.scrape(@url)
        @chart.each.with_index(1) do |song, index|
       puts "#{index}. #{song[:title]} - #{song[:artist]}"
       end
