@@ -6,6 +6,7 @@ class ChartFinder::CLI
     @chosen_date = date
     date_to_url(date)
     make_songs
+    @chart = ChartFinder::Song.all
     list_songs
     menu
     goodbye
@@ -41,7 +42,7 @@ class ChartFinder::CLI
     puts ""
     puts "****************************************************************"
     
-    ChartFinder::Song.all.each.with_index do |song, index|
+    @chart.each.with_index do |song, index|
       puts "#{index + 1}. #{song.title} - #{song.artist} "
     end
     puts "****************************************************************"
