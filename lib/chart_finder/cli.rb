@@ -1,4 +1,3 @@
-require "pry"
 class ChartFinder::CLI
   def call
     welcome
