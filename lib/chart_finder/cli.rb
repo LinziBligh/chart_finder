@@ -68,10 +68,10 @@ end
       chosen_song = @chart[input.to_i-1]
       puts ""
       puts "***************************************************************"
-      puts "Title: #{chosen_song[:title]}"
-      puts "Artist: #{chosen_song[:artist]}"
-      puts "Record Label: #{chosen_song[:label]}"
-      puts "Artwork Link: #{chosen_song[:coverlink]}"
+      puts "Title: #{chosen_song.title}"
+      puts "Artist: #{chosen_song.artist}"
+      puts "Record Label: #{chosen_song.label}"
+      puts "Artwork Link: #{chosen_song.coverlink}"
       puts "***************************************************************"
       puts ""
     elsif input.to_i <= 0 || input.to_i > @chart.length
