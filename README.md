@@ -1,8 +1,6 @@
 # ChartFinder
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/chart_finder`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to ChartFinder! This gem scrapes the archives of the UK's Official Chart Company website for the date that you enter, and displays the official UK singles chart for that date. (UK music chart records started on 14/11/1952). You can then choose a song from that chart to see more information about it.
 
 ## Installation
 
@@ -22,7 +20,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+When prompted, enter the date of chart you would like to see, in the format dd/mm/yyyy. Once the chart is displayed, to see more information about a song, just enter its position number in the chart. 
+
+To see the chart again, type chart, or just type exit to end the programme.
 
 ## Development
 
