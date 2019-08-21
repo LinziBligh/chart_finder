@@ -47,6 +47,17 @@ class ChartFinder::CLI
     puts "****************************************************************"
     puts ""
 end
+
+ def chosen_song_display(chosen_song)
+   puts ""
+      puts "***************************************************************"
+      puts "Title: #{chosen_song.title}"
+      puts "Artist: #{chosen_song.artist}"
+      puts "Record Label: #{chosen_song.label}"
+      puts "Artwork Link: #{chosen_song.coverlink}"
+      puts "***************************************************************"
+      puts ""
+    end
   
   
  
@@ -64,15 +75,7 @@ end
     elsif input == "chart"
       list_songs
     elsif input.to_i > 0 && input.to_i <= @chart.length
-      chosen_song = @chart[input.to_i-1]
-      puts ""
-      puts "***************************************************************"
-      puts "Title: #{chosen_song.title}"
-      puts "Artist: #{chosen_song.artist}"
-      puts "Record Label: #{chosen_song.label}"
-      puts "Artwork Link: #{chosen_song.coverlink}"
-      puts "***************************************************************"
-      puts ""
+      chosen_song_display(@chart[input.to_i-1])
     elsif input.to_i <= 0 || input.to_i > @chart.length
       puts "Invalid choice, please choose a song number between 1 and #{@chart.length}"
       puts ""
