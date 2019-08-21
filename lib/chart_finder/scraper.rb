@@ -1,7 +1,5 @@
  class ChartFinder::Scraper
 
-attr_accessor :title, :artist, :label, :coverlink 
-  
   def self.scrape(url)
     html = open(url)
     doc = Nokogiri::HTML(html)
