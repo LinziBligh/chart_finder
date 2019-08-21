@@ -1,7 +1,7 @@
 class ChartFinder::CLI
   def call
     welcome
-    puts "Please enter the date of the official UK singles chart that you would like to see, (DD/MM/YYYY). (Earliest available date is 14/11/1952)"
+    
     date = gets.strip
     @chosen_date = date
     date_to_url(date)
@@ -20,6 +20,7 @@ class ChartFinder::CLI
     puts "*                                               *"
     puts "*************************************************"
     puts ""
+    puts "Please enter the date of the official UK singles chart that you would like to see, (DD/MM/YYYY). (Earliest available date is 14/11/1952)"
   end
   
   BASE_PATH = "https://www.officialcharts.com/charts/singles-chart/"
