@@ -1,10 +1,8 @@
 class ChartFinder::CLI
   def call
     welcome
-    
-    date = gets.strip
-    @chosen_date = date
-    date_to_url(date)
+    @chosen_date = gets.strip
+    date_to_url(@chosen_date)
     make_songs
     @chart = ChartFinder::Song.all
     list_songs
