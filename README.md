@@ -19,7 +19,7 @@ Or install it yourself as:
     $ gem install chart_finder
 
 ## Usage
-
+To start, type "ruby bin/chart_finder"
 When prompted, enter the date of chart you would like to see, in the format dd/mm/yyyy. Once the chart is displayed, to see more information about a song, just enter its position number in the chart. 
 
 To see the chart again, type chart, or just type exit to end the programme.
